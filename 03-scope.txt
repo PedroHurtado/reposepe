@@ -16,3 +16,23 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 
 2. Cuando pasamos una function a otra function como argumento
+
+class Bar{
+    constructor(writer){
+        writer();  // undefined
+        this.writer = writer
+        this.writer(); //Bar
+    }
+}
+
+class Foo{
+  constructor(){
+    //new Bar(this.writer.bind(this)) (1)
+    new Bar(()=>this.writer()) //No(2)
+  }
+  writer(){
+    console.log(this)
+  }   
+}
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions

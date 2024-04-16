@@ -1,0 +1,10 @@
+1. historia
+2. Modelo de objectos
+3. Scope
+4. Estructuras de datos
+5. Sugar sintax
+6. Callback,clousures,generator
+7. True False
+8. Asincrono
+9. Modulos
+10. DOM

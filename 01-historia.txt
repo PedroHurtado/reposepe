@@ -1,0 +1,12 @@
+2015 javascript
+
+Transpilador
+
+Moderno->Anterior 2015
+
+TypeScript->Microsoft
+Babel->Facebook
+2015,2016,2017,2018...2024
+
+https://github.com/tc39/ecma262
+https://chromestatus.com/roadmap

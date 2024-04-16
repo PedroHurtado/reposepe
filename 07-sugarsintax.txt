@@ -64,3 +64,52 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest
     foo({id:1,name:'pedro', phone:453453453})
 
     https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+   const foo = {
+    x:1,
+    write:function(){
+        console.log(this.x)
+    }
+   }
+
+   const {id,write} = foo //perdida de ambito
+   write() // undefined
+
+   4. Spread Operators
+    
+     const a = [1,2,3]
+     const b=[4.,5,6]
+     const c = [...a,...b] //concatena los valores
+     [1,2,3,4,5,6]
+
+     const foo = {id:1,name:'pedro}
+     const bar = {name:'pedro hurtado'}
+
+     const result = {...foo,...bar}
+
+     {id:1,name:'pedro hurtado'}
+
+     https://developer.mozilla.org/en-US/docs/Web/API/structuredClone
+     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+5. Operador de cortocircuito
+
+    if(a){
+        a()
+    }
+
+    a && a();
+
+    const bar = undefined || {}
+
+    function foo(options){
+        options = options || {}
+    }
+
+    foo() options->{}
+    foo({id:1}) ->{id:1}
+
+6. Optional Chaining
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing

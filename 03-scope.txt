@@ -36,3 +36,22 @@ class Foo{
 }
 
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+call y apply
+
+const bar = {}
+function foo(name){
+    this.name = name
+}
+foo.call(bar,"Pedro")
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+
+1. argumento es el this
+2. argumento es el argumento de la function
+
+const bar = {}
+function foo(name){
+    this.name = name
+}
+foo.apply(bar,["Pedro"])

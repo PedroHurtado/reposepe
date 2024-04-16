@@ -46,7 +46,7 @@ class Customer inherit().withMixins(add,upate,remove,get){
 class User inherit().withMixins(get){
 
 }
-    this.Base +add
+    this.Base+add
     this.Base+add+update
     this.Base+add+update+remove
     this.Base+add+update+remove+get

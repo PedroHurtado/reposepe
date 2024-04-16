@@ -1,0 +1,17 @@
+//false
+0
+''
+null
+undefined
+false
+
+//true
+!0
+!''
+!null
+!undefine
+true
+
+1=='1'  //true->cast y comprueba
+1==='1' //compara tipo y valor
+1!=='1' //compara tipo y valor

@@ -32,3 +32,7 @@ class Foo{
         console.log("static method")
     }
 }
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes
+https://developer.mozilla.org/es/docs/Web/JavaScript/Inheritance_and_the_prototype_chain

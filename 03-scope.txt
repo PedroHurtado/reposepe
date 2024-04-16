@@ -1,0 +1,18 @@
+1. Cuando asignamos una function a una variable
+
+window.x=10
+window.foo={
+    x:11,
+    write:function(){
+        console.log(this.x)
+    }
+}
+
+window.foo.write() //11
+window.write = window.foo.write.bind(window.foo);
+window.write() //10
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+
+2. Cuando pasamos una function a otra function como argumento

@@ -1,0 +1,41 @@
+1. Callback
+
+    pasar como argumento a otra funcion una funcion
+
+    printDate(date,writer){
+        writer(date)
+    }
+
+    printDate(date,console.log)
+
+    [1,2,3].map(v=>v*v)
+
+2. Clousure
+    Devolver desde una funcion otra funcion
+    Crea la instancia de un objeto donde los
+    argumentos de la primera funcion son inmutables
+
+    function sum(a){
+        return function(b){
+            debugger
+            return a+b
+        }
+    }
+    ¿Como obtendría el 8 sumando el 5 y el 3?
+    sum(5)(3) //8
+
+    const result = sum(5)
+
+    result(100) //105
+    result(40) //45
+    result(20) //25
+
+
+    class Foo{
+        constructor(a){
+            this.a =a
+        }
+    }
+
+    const result = new Foo(5)
+    result.a =10

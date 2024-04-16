@@ -1,0 +1,31 @@
+const a = [1,2,3,4,5,6]
+
+a.filter(v=>v%2===0) [2,4,6]
+a.find(v=>v%2===0) 2
+a.sort()
+a.map(v=>v*v) [1,4,6,15,25,36]
+a.reduce((a,v)=>a+v)  sum,count,min.max    
+    1+2=3
+    3+3=6
+    6+4=10
+    10+5=15
+    15+6=21
+
+sumar 100 al array->121
+100+a.reduce((a,v)=>a+v)
+a.reduce((a,v)=>a+v)+100
+
+a.reduce((a,v)=>a+v,100)
+
+Map
+
+const map = new Map()
+map.set('key',5)
+map.get('key') //5
+
+Set
+
+const set = new Set([1,2,3,3,4,4,5])
+1,2,3,4,5
+
+    100+1---121

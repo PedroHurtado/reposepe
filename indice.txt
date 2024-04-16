@@ -1,5 +1,5 @@
 1. historia
-2. Modelo de objectos
+2. Modelo de objetos
 3. Scope
 4. Estructuras de datos
 5. Sugar sintax

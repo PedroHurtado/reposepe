@@ -1,0 +1,34 @@
+<2015
+//Definicion del tipo y constructor
+function Foo(name){
+    this.name = name
+}
+//Definicion de un metodo de instancia público
+Foo.prototype.write = function(){
+    console.log(this.name)
+}
+//Definicion de un metodo private de instancia
+Foo.prototype._write = function(){
+    console.log('private method')
+}
+//Metodo estatico
+Foo.write = function(){
+    console.log("static method")
+}
+
+//>2015
+
+class Foo{
+    constructor(name){
+        this.name = name
+    }
+    write(){
+        console.log(this.name)
+    }
+    _write(){
+        console.log("private method")
+    }
+    static write(){
+        console.log("static method")
+    }
+}

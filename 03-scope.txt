@@ -55,3 +55,5 @@ function foo(name){
     this.name = name
 }
 foo.apply(bar,["Pedro"])
+
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply

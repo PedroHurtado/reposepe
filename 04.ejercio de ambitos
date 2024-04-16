@@ -1,0 +1,32 @@
+1. Dados los siguientes constructores
+    function Foo(name){
+        this.name = name;
+    }
+    function Bar(name,surname){
+        this.name = name
+        this.surname = surname
+    }
+Crear una function factoria con la siguiente firma
+
+    function factory(scope,strType,...args){
+        debugger
+        const ctor = scope[strType]
+        if(!ctor){
+            throw `el tipo ${strType} no está definido`
+        }
+        const instance = Object.create(ctor.prototype)
+        ctor.apply(instance,args)
+        return instance
+    }
+
+capaz de simular el funcionamiento del operador new sin utilizarlo
+
+Ejemplos
+
+1. factory(window,"Foo","Pedro")
+1. factory(window,"Bar","Pedro","Hurtado")
+1. factory(window,"Pepe","Pedro","Hurtado") //error
+
+1. Reflexion->cadena obtener un metodo
+2. Object.create(obj.prototype)
+3. apply->Function

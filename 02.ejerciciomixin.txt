@@ -1,0 +1,52 @@
+1. Los clientes se pueden crear,modificar,eliminar y leer
+los usuarios solo se pueden leer
+
+const add = Base=>class extends Base{
+    add(){}
+}
+const update = Base=>class extends Base{
+    update(){}
+}
+const remove = Base=>class extends Base{
+    remove(){}
+}
+const get = Base=>class extends Base{
+    get(){}
+}
+
+
+
+class Customer extends add(update(remove(get(class{})))){
+
+}
+
+class User extends get(class {}){
+   get(){
+    super.get();
+   } 
+}
+
+class Mixin{
+    constructor(Base){
+        this.Base = Base;
+    }
+    withMixins(...mixins){
+        return mixins.reduce((p,m)=>m(p), this.Base)
+    }
+}
+
+function inherit(Base){
+    return new Mixin(Base || class {})
+}
+
+class Customer inherit().withMixins(add,upate,remove,get){
+
+}
+
+class User inherit().withMixins(get){
+
+}
+    this.Base +add
+    this.Base+add+update
+    this.Base+add+update+remove
+    this.Base+add+update+remove+get

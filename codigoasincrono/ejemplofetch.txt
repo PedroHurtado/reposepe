@@ -1,0 +1,8 @@
+const response = await fetch("http://localhost:8080/data.json")
+const data = await response.json()
+
+XmlHttpRequest->ajax->deprecated
+fetch->
+
+https://developer.mozilla.org/es/docs/Web/API/Fetch_API
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest

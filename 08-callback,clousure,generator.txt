@@ -43,7 +43,7 @@
     }
 
     //signal
-    Angular,React,Vue,Svelte,SolidJs,Quiz,Lit
+    Angular,React,Vue,Svelte,SolidJs,Qwiz,Lit
     https://github.com/tc39/proposal-signals
 
     function signal(initialValue){

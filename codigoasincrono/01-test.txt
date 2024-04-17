@@ -1,0 +1,20 @@
+console.log("inicio")       //sincrono
+setTimeout(()=>console.log("timeout"),0) //sincrono->task
+Promise.
+    resolve().
+    then(()=>console.log("promise1")). //sincrono->microtask
+    then(()=>console.log("promise2"))
+console.log("final") //sincrona
+
+inicio
+final
+promise1
+promise2
+timeout
+
+stack
+microtask
+task
+
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+https://www.youtube.com/watch?v=8aGhZQkoFbQ

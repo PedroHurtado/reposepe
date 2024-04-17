@@ -1,0 +1,9 @@
+elements                    text                       comment
+
+HTMLDivElement              Text                       Comment
+HTMLElement                 CharacterData              CharacterData  
+Element
+Node                        Node                        Node
+EvenTarget                  EvenTarget                  EvenTarget
+Object                      Object                      Object
+null                        null                        null

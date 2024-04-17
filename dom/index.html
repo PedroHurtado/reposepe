@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <math>
+        <mrow>
+         <mi>x</mi>
+         <mo>=</mo>
+         <mfrac>
+           <mrow>
+             <mrow>
+               <mo>-</mo>
+               <mi>b</mi>
+             </mrow>
+             <mo>±</mo>
+             <msqrt>
+               <mrow>
+                 <msup>
+                   <mi>b</mi>
+                   <mn>2</mn>
+                 </msup>
+                 <mo>-</mo>
+                 <mrow>
+                   <mn>4</mn>
+                   <mo>⁢</mo>
+                   <mi>a</mi>
+                   <mo>⁢</mo>
+                   <mi>c</mi>
+                 </mrow>
+               </mrow>
+             </msqrt>
+           </mrow>
+           <mrow>
+             <mn>2</mn>
+             <mo>⁢</mo>
+             <mi>a</mi>
+           </mrow>
+         </mfrac>
+        </mrow>
+       </math>
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <input type="text" value="pedro">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        function create() {
+            const text = document.createTextNode("Hello World")
+            const comment = document.createComment("comentario")
+            const div = document.createElement("div")
+            div.appendChild(text)
+            document.body.appendChild(div)
+            document.body.appendChild(comment)
+            return {
+                div,
+                text,
+                comment
+            }
+        }
+        function update() {
+            const { div, text, comment } = create()
+            //update htmlElement
+            div.setAttribute("data-page", "pagina1")
+            div.className = "red"
+            //div.classList.
+            div.style.setProperty("color", "blue")
+
+            text.data = "HELLO WORLD"
+            comment.data = "COMENTARIO1"
+            return { div }
+        }
+        function remove() {
+            const { div } = update();
+            //div.remove() //incompatiblidad con exploradores
+            div.parentNode.removeChild(div) //compatible
+        }
+        remove()
+
+        /*
+            document.getElementById('pedro') ->(1)
+            document.getElementsByClassName('red') ->[]
+            document.getElementsByTagName('div') ->[]
+    
+            https://www.w3schools.com/cssref/css_selectors.php
+    
+            document.querySelector('#pedro')->1
+            document.querySelector('.red')->1
+            document.querySelector('div')->1
+    
+            document.querySelectorAll('.red')->[]
+            document.querySelectorAll('div')->[]
+        */
+
+        /* movimiento abajo,izquierda,derecha,arriba
+            parentNode
+            parentElement
+    
+            nextElementSibling
+            nextSibling
+    
+            previousElementSibling
+            previousSibling
+    
+            children
+            childNodes
+    
+        */
+        /* reflect attribute
+             value
+             href
+             <input type="value" value="pedro">
+             input.value="Pedro Hurtado"
+        */
+
+        /* void elements
+             son los elementos que no pueden contener otros nodos
+             https://developer.mozilla.org/en-US/docs/Glossary/Void_element
+        */
+
+        /* namespaces
+
+            html->'http://www.w3.org/1999/xhtml'
+            svg->'http://www.w3.org/2000/svg'
+            mathML->'http://www.w3.org/1998/Math/MathML'
+
+            document.createElementNS('http://www.w3.org/1999/xhtml','div')
+            document.createAttributeNS
+        */
+
+        /* atributos presentes y no presentes
+            $0.setAttribute("require","") nunca se debe utilizar
+            ni true ni false
+        */
+
+        /* insercion de nodos
+            appendChild siempre inserta en el final de los hijos
+
+        var insertedNode = parentNode.insertBefore(newNode, referenceNode);
+        var insertedNode = parentNode.insertBefore(newNode, null);
+
+        */
+
+        /* performance
+            
+            //create
+            const fragment = document.createDocumentFragment()
+            document.body.appendChild(fragment.cloneNode(true))
+
+            //https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker
+
+        */
+    </script>
+</body>
+
+</html>

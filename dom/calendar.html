@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calendar{
+            display: grid;
+            grid-template-columns: repeat(7,1.5rem);
+            gap:0.5rem
+        }
+        .day{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .day:hover{
+            outline: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        //no event delegation
+        function* getDays(){
+            for(let i=0;i<31;i++){
+                yield i+1
+            }
+        }
+
+        const calendar = document.createElement('div')
+        calendar.className ="calendar"
+        for(const day of getDays()){
+            const dayDom = document.createElement('div')
+            dayDom.textContent = day
+            dayDom.className = "day"
+            dayDom.addEventListener('click', (ev)=>{
+                ev.stopPropagation();
+                console.log(ev.target.textContent)
+            })
+            calendar.appendChild(dayDom)
+        }
+        document.body.appendChild(calendar)
+        */
+
+    </script>
+    <script>
+        //event delegation
+
+        //https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+
+        function* getDays(){
+            for(let i=0;i<31;i++){
+                yield i+1
+            }
+        }
+        const calendar = document.createElement('div')
+        calendar.className ="calendar"
+        calendar.addEventListener('click', (ev)=>{
+                ev.stopPropagation();
+                //console.log(ev.target.textContent)
+                const node = ev.composedPath().find(n=>n.dataset && 'day' in n.dataset)
+                if(node){
+                    const {day} = node.dataset
+                    console.log(day)
+                }
+                
+        })
+        for(const day of getDays()){
+            const dayDom = document.createElement('div')
+            dayDom.textContent = day
+            dayDom.className = "day" 
+            dayDom.setAttribute('data-day',day)           
+            calendar.appendChild(dayDom)
+        }
+        document.body.appendChild(calendar)
+    </script>
+</body>
+</html>

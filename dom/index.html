@@ -87,7 +87,8 @@
         }
         remove()
 
-        /*
+        /*   query elements
+        
             document.getElementById('pedro') ->(1)
             document.getElementsByClassName('red') ->[]
             document.getElementsByTagName('div') ->[]
@@ -144,7 +145,8 @@
         */
 
         /* insercion de nodos
-            appendChild siempre inserta en el final de los hijos
+            
+        appendChild siempre inserta en el final de los hijos
 
         var insertedNode = parentNode.insertBefore(newNode, referenceNode);
         var insertedNode = parentNode.insertBefore(newNode, null);
@@ -157,7 +159,11 @@
             const fragment = document.createDocumentFragment()
             document.body.appendChild(fragment.cloneNode(true))
 
+            //lectura
             //https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker
+
+            //remove
+            node.textContent = ''
 
         */
     </script>

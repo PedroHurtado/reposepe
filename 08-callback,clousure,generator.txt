@@ -62,5 +62,31 @@
         return fn
     }
 
+3. generator
+    function filter(array,predicate){
+        const newArray=[]
+        for(const value of array){
+            if(predicate(value)){
+                newArray.push(value)
+            }
+        }
+        return newArray
+    }
+
+    1. Memoria
+    2. Bloqueo
+
+    function* filter(array,predicate){
+        
+        for(const value of array){
+            if(predicate(value)){
+                yield value
+            }
+        }
+        
+    }
+
+    https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Generator
+
 
     

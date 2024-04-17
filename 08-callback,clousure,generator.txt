@@ -30,12 +30,37 @@
     result(40) //45
     result(20) //25
 
+    //eventos
 
-    class Foo{
-        constructor(a){
-            this.a =a
+    node,tipo,cb
+
+    function events(node,event,cb){
+        node.addEventListener(event,cb)
+        return function(){
+            debugger
+            node.removeEventListener(event,cb)
         }
     }
 
-    const result = new Foo(5)
-    result.a =10
+    //signal
+    Angular,React,Vue,Svelte,SolidJs,Quiz,Lit
+    https://github.com/tc39/proposal-signals
+
+    function signal(initialValue){
+        
+        let value = initialValue;
+
+        const fn=()=>value  //getter
+        fn.set = newValue=>{ //setter
+            debugger
+            if(value!==newValue){
+                console.log(`oldvalue :${value} newValue: ${newValue} `  )
+                value=newValue
+            }
+            
+        }
+        return fn
+    }
+
+
+    

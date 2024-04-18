@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color:blue
+        }
+        :root{
+            /*https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties*/
+            --color-title:green
+        }
+        tel-title{
+            --color-title:gray
+        }
+    </style>
+</head>
+<body>
+    <template id="tel-title">
+        <style>
+            div{
+                color: var(--color-title,red);
+            }
+        </style>
+        <div>Hello World</div>
+        <slot></slot>
+    </template>
+    <div>Texto</div>
+    <tel-calendar></tel-calendar>
+    <tel-title date="12-05-2025">1</tel-title>
+    <tel-title>2</tel-title>
+    <tel-title>3</tel-title>
+    <tel-title>4</tel-title>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

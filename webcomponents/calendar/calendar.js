@@ -1,4 +1,4 @@
-import styles from "./calendar.css" assert { type: "css" };
+import styles from "./calendar.css" with { type: "css" };
 import {Day} from './day.js'
 
 function* getDays(){

@@ -1,4 +1,4 @@
-import styles from "./day.css" assert { type: "css" };
+import styles from "./day.css" with { type: "css" };
 export class Day extends HTMLElement{    
     constructor(){
         super()

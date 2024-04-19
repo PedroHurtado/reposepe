@@ -14,7 +14,8 @@ def signal(initialValue):
     
     def suscribe(cb):
         cb()
-        suscriptors.append(cb)
+        if not cb in suscriptors:
+            suscriptors.append(cb)
     fn.suscribe = suscribe
     return fn
 

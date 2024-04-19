@@ -3,9 +3,9 @@ class Bar:
         self.id =id
         self.name = name
     def __eq__(self, value: object) -> bool:  
-        if isinstance(value, Bar):      
-            return self.id == value.id and self.name == value.name
-        return False
+        if not isinstance(value, Bar):      
+            return False            
+        return self.id == value.id and self.name == value.name
     def __hash__(self) -> int:
         return hash((self.id,self.name))
 

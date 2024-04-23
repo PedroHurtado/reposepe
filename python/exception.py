@@ -34,7 +34,7 @@ class Foo:
         #que duplicar la validación
     @property
     def name(self):
-        return self._name
+        return self._name    
     @name.setter
     def name(self,name):
         if name is None:

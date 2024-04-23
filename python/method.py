@@ -25,3 +25,19 @@ foo1.cl("foo1") #''''
 crear la instancia de una clase con un metodo estatico y un class method
 https://www.geeksforgeeks.org/class-method-vs-static-method-python/
 """
+
+class Bar:
+    def __init__(self,name) -> None:
+        self.name = name
+	
+    @classmethod
+    def create(cls,name):
+        return cls(name)
+    @staticmethod
+    def createStatic(name):
+        return Bar(name)
+    
+bar = Bar.create("Pedro")
+print(bar.name) #pedro
+bar1 = Bar.createStatic("Pedro1")
+print(bar1.name) #pedro1

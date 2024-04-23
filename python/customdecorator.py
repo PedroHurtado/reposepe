@@ -4,6 +4,10 @@
   3.invocar la funcion dentro de ella
   4.retornar la funcion
   https://refactoring.guru/design-patterns/decorator
+  POA(Programacion orientada a aspectos)
+  1. logger
+  2. global exception
+  3. validacion,...etc
 """
 from functools import wraps
 def decorator(fn):
@@ -16,7 +20,6 @@ def decorator(fn):
     return wrapper
 
 def required(type:type): 
-
     def decorator(fn):
         wraps(fn)                
         def wrapper(*args,**kwargs):

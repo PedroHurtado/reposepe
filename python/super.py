@@ -25,8 +25,29 @@ class Shape:
 
 class Square(Shape):
     def __init__(self, x, y) -> None:
-        super().__init__(x, y)
+        super().__init__(x, y)        
 
 square = Square(10,10)
 print(square.x)
 print(square.y)
+
+class A:
+    def __init__(self,x):
+        self._x=x
+class B:
+    def __init__(self,y):        
+        self._y = y
+
+class C(A,B):
+    def __init__(self, x,y):
+        #super().__init__(x)
+        
+        A.__init__(self,x)
+        B.__init__(self,y)
+
+        #super(C,self).__init__(x)
+
+
+c =C(10,5)
+print(c._x)
+print(c._y)

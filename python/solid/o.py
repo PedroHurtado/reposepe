@@ -33,9 +33,13 @@ class Shape(ABC):
         self.y = y
         self.color=color
         self.id = uuid.uuid4()   
+    def __hash__(self) -> int:
+        return hash(self.id)
+
 class Rectangle(Shape):
     def __init__(self, x: int, y: int, color: Color) -> None:
         super().__init__(x, y, color)   
+
 class Circle(Shape):
     def __init__(self, x: int, y: int, color: Color) -> None:
         super().__init__(x, y, color)
@@ -54,22 +58,47 @@ class ToolBar:
         return self._shapes.get(key)(*args) 
      
 
-
 class Canvas:
     def __init__(self) -> None:
-        self._shapes = []
-    def add():
-        pass
-    def remove(str):
+        self._shapes = set()
+    def add(self,shape:Shape):
+        self._shapes.add(shape)
+    def remove(str,id):
         pass    
-    
-class Application:
-    def __init__(self,canvas,toolbar) -> None:
+
+class Command(ABC):
+    def __init__(self,receiver:Canvas) -> None:
+        super().__init__()
+        self._receiver = receiver
+    @abstractmethod
+    def execute(self):
         pass
-    def register_command():
-        pass
-    def run():
-        pass
+
+class AddCommand(Command):
+    def __init__(self, receiver: Canvas,shape:Shape) -> None:        
+        super().__init__(receiver)
+        self._shape = shape
+    def execute(self):
+        self._receiver.add(self._shape)
+
+class RemoveCommand(Command):
+    def __init__(self, receiver:Canvas, id:uuid) -> None:        
+        super().__init__(receiver)
+        self._id = id 
+    def execute(self):
+        self._receiver.remove(id)
+
+class FactoryCommad():
+    @staticmethod
+    def createAddCommand(toolbar:ToolBar,canvas:Canvas,*args):
+        key,x,y,color =args
+        command = AddCommand(canvas, toolbar.get_shape(key,x,y,toolbar.get_color(color)))
+        return command
+    @staticmethod
+    def createRemoveCommnand(canvas, *args):
+        id=args[0]   
+        command = RemoveCommand(canvas,id)
+        return command
 
 
 
@@ -80,10 +109,32 @@ def createToolbar():
     toolbar.register_shapes("circle", lambda *args:Circle(*args))
     toolbar.register_shapes("rectangle", lambda *args:Rectangle(*args))
     return toolbar
-toolbar = createToolbar()
-circle = toolbar.get_shape("circle", 0,10,toolbar.get_color("white"))
 
-canvas = Canvas()
-app = Application(canvas,toolbar)
+
+class Application:
+    def __init__(self,canvas,toolbar) -> None:
+        self._commands = {}
+    def register_command(self, key:str, factory):
+        self._commands.update({key:factory})
+    def run(self,*args):
+        newArgs = args[1:len(args)]
+        command:Command = self._commands.get(args[0])(*newArgs)
+        command.execute()
+
+
+def createApp(canvas,toolbar):
+    app = Application(canvas,toolbar)
+
+    app.register_command("add", lambda *args:
+                         FactoryCommad.createAddCommand(toolbar,canvas, *args))
+    
+    app.register_command("remove", 
+                         lambda *args:
+                         FactoryCommad.createRemoveCommnand(canvas,*args))
+    
+    return app
+    
+app = createApp(Canvas(), createToolbar())
+
 app.run("add","circle", 0,10, "white")
-app.run("remove", "")
+app.run("remove", "1")

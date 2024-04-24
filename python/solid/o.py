@@ -117,8 +117,8 @@ class Application:
     def register_command(self, key:str, factory):
         self._commands.update({key:factory})
     def run(self,*args):
-        newArgs = args[1:len(args)]
-        command:Command = self._commands.get(args[0])(*newArgs)
+        key,*newArgs = args
+        command:Command = self._commands.get(key)(*newArgs)
         command.execute()
 
 

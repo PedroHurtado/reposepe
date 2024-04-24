@@ -67,10 +67,8 @@ class CanvasRemove:
         self.paint() 
 
 class Canvas(CanvasAdd, CanvasRemove):
-    def __init__(self) -> None:      
-        
+    def __init__(self) -> None:     
         self._shapes = set()
-    
     def paint(self):
         for shape in self._shapes:
             print(shape.id.__str__())

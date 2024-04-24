@@ -23,6 +23,10 @@ class Pinguino(Ave):
     def __init__(self, peso:int) -> None:
         super().__init__(peso)
 
+class Paloma(AveVoladora):
+    def __init__(self, peso: int, velocidad: int) -> None:
+        super().__init__(peso, velocidad)
+
 def print_aves(ave:Ave,writer=print)->None:
     if not isinstance(ave,Ave):
         raise TypeError(f"el parametro no es del tipo {type(Ave)}")
@@ -35,6 +39,8 @@ def print_aves_voladoras(ave:AveVoladora, writer=print):
 print_aves(Aguila(10,100))  #ok
 print_aves(Pinguino(5))     #ok
 print_aves_voladoras(Aguila(10,100)) #ok
+print_aves(Paloma(1,20))
+print_aves_voladoras(Paloma(1,20))
 print_aves_voladoras(Pinguino(10)) #error
 
 

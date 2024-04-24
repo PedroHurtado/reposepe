@@ -58,13 +58,22 @@ class ToolBar:
         return self._shapes.get(key)(*args) 
      
 
-class Canvas:
-    def __init__(self) -> None:
-        self._shapes = set()
+class CanvasAdd:            
     def add(self,shape:Shape):
         self._shapes.add(shape)
-    def remove(str,id):
-        pass    
+        self.paint()    
+class CanvasRemove:    
+    def remove(self,id):
+        self.paint() 
+
+class Canvas(CanvasAdd, CanvasRemove):
+    def __init__(self) -> None:      
+        
+        self._shapes = set()
+    
+    def paint(self):
+        for shape in self._shapes:
+            print(shape.id.__str__())
 
 class Command(ABC):
     def __init__(self,receiver:Canvas) -> None:
@@ -75,14 +84,14 @@ class Command(ABC):
         pass
 
 class AddCommand(Command):
-    def __init__(self, receiver: Canvas,shape:Shape) -> None:        
+    def __init__(self, receiver: CanvasAdd,shape:Shape) -> None:        
         super().__init__(receiver)
         self._shape = shape
-    def execute(self):
+    def execute(self):        
         self._receiver.add(self._shape)
 
 class RemoveCommand(Command):
-    def __init__(self, receiver:Canvas, id:uuid) -> None:        
+    def __init__(self, receiver:CanvasRemove, id:uuid) -> None:        
         super().__init__(receiver)
         self._id = id 
     def execute(self):
@@ -112,7 +121,7 @@ def createToolbar():
 
 
 class Application:
-    def __init__(self,canvas,toolbar) -> None:
+    def __init__(self,canvas:Canvas,toolbar:ToolBar) -> None:
         self._commands = {}
     def register_command(self, key:str, factory):
         self._commands.update({key:factory})
@@ -137,4 +146,5 @@ def createApp(canvas,toolbar):
 app = createApp(Canvas(), createToolbar())
 
 app.run("add","circle", 0,10, "white")
-app.run("remove", "1")
+app.run("add","rectangle", 0,10, "black")
+#app.run("remove", "1")

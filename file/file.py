@@ -19,10 +19,8 @@ output =os.path.dirname(__file__)+ "\\pares.txt"
 
 def read_line_file(input:str):
     with open(input, "r") as fs:
-        line = fs.readline()        
-        while(line!=''):        
+        for line in fs:
             yield int(line.strip())
-            line = fs.readline()  
 
 def new_line(v):
     return str(v) + '\n'

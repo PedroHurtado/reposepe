@@ -1,0 +1,45 @@
+¿Que modelos de aplicaciones podemos hacer?
+    -SPA(Single page application)
+    -MPA(Multipage application)->django
+    -PWA(Progresive web app)
+
+1. SPA
+    Pros
+        1.Menos transmision de datos entre el cliente y el servidor
+        index.html
+            Angular,React,Vue,Svelte-Js
+            Templates->html->js
+        api->json
+        json+js(template)->monto html con la api del dom
+        2.Mejor usabilidad
+    Contras
+        1. Más lenta(js)
+        2. No puedes hacer SEO
+1. MPA(django)
+    Pros
+        Mas rapida de procesar en el cliente
+        Puedo hacer SEO
+    Contras
+        Mayor carga en el servidor
+        Mayor transmision de bytes entre el cliente y el servidor
+3. PWA
+    Instalar el minimo de la applicacion->cliente
+    ServiceWorker->hijo de ejecucion diferente al hilo principal
+    Segunda vez que un usuario renderiza la página la renderiza desde el sw
+
+    Descargar js+html+json+imagenes a demanda y las cacheo en el cliente
+    https://developer.chrome.com/blog/beyond-spa?hl=es-419
+
+    Contras
+        Cache
+
+MPA->
+    SSR(Server side rendering)->django
+    SSG(Server side generation)->no
+
+    En el momento de la compilación genera el html y esa página no se
+    procesa en el servidor ni el cliente
+
+    Angular,React,Vue,Svelte-Js
+
+    https://astro.build/

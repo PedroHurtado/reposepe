@@ -1,0 +1,77 @@
+1. Instalación del framework(get stated)
+    Configurar editor
+    Debug
+2. Routing
+    {path:"", views:view.home}
+3. Template sintax
+    
+    if
+    for
+    interpolacion
+    
+    const name ="Pedro"
+    <div>{{name}}</div>
+    <div>Pedro</div>
+
+    Eventos->script->document.addEventListener('click',console.log)
+
+    Angular,React,Vue,Svelte->MPA->Ejecuta el js
+
+    (click)="handlerClick($event)" //Angular
+    onClick={handlerClick}
+3. def fn(request,id)
+    Response
+
+    Request->capturar params url /pizzas/1
+    Request->Header(cookies) -> session->httpOnly,secure
+    Request->Body
+    Request->query string  pizzas?name=carbonara&page=1&size=25
+
+    Response->
+        status-code 204
+        Header
+
+        render(html)
+
+        Controlador->Modelo->Vista
+
+        PRG pattern(incumples)
+        1.GET->csrf
+        2.POST->NUNCA DEBERIAS DEVOLVER DATOS EN EL BODY DE UN FORM
+        REDIRIGIR AL GET->1
+        
+        https://en.wikipedia.org/wiki/Post/Redirect/Get
+        https://stackoverflow.com/questions/3024168/how-to-redirect-with-post-data-django
+        https://www.django-antipatterns.com/antipattern/rendering-content-after-a-successful-post-request.html
+        https://www.geeksforgeeks.org/post-redirect-get-prg-design-pattern/
+
+3. Middelware
+
+    Explorador->Request
+    Servidor->Captura el Request(C->mvc)
+    Servidor->Response
+
+    Ruquest(C)->autenticacion+cors+csp->controlador
+4. Global handler exception djando
+
+    https://medium.com/@techWithAditya/middleware-magic-how-to-use-django-middleware-for-advanced-error-handling-and-exception-management-78573a27204e
+    https://docs.djangoproject.com/en/5.0/ref/exceptions/
+
+5. Model
+    https://docs.djangoproject.com/en/5.0/topics/db/models/
+
+    Active Record
+
+        save
+        get
+        getlist
+        remove
+        update
+
+        Todos los atributos de la clase son un espejo de la tabla de la bb.dd
+
+    Dominio->puede diferir de la tabla de la bb.dd
+    
+    ORM(Object relational mapping)
+
+    https://ponyorm.org/

@@ -1,0 +1,24 @@
+1. Cors
+    -solo funciona en el browser
+
+¿Cuando se produce cors?
+    dominio(8080)->dominio(8081)
+    fetch/XmlHttpRequest
+
+Tu puedes descargar un script malicioso y ejecutarlo+csp
+
+Request->
+    Origin:http://localhost:8081
+Response
+    Access-Control-Allow-Origin:http://localhost:8081 | * (todos los dominios)
+    Si devuelvo el dominio de la cabecera origin sin comprobarlo en una lista
+    csrf+cookie->POST,GET,PUT,DELETE
+    * no permite enviar cookies
+
+    Access-Control-Allow-Credentials:true (*) no lo permite
+
+    Access-Control-Max-Age:3600
+    1. OPTIONS
+    2. GET
+
+    https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request

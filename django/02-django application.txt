@@ -1,0 +1,46 @@
+1. MPA(MVC)
+3. Api Rest
+
+
+    ¿Si creamos un recurso que verbo debo de utilizar?
+    POST
+    ¿Una vez creado el recurso que estatus code devuelvo?
+    201
+
+    ¿Imaginemos pizzas?
+
+    /pizza/get/1/pizza.json
+    /pizza/get/1/pizza.xml
+
+    deben de plurarizarse
+    /pizzas
+    no se de expresar acciones /get,cretate
+    /pizzas/1
+    GET
+    no se debe de expresar en la url formatos
+        accept:application/json|application/xml
+        content-type:application/json|applicacion.xml
+
+OK
+
+200->GET,PUT(si devuelvo datos)
+201->POST
+204->DELETE,PUT(si no devuelvo datos)
+
+ERROR
+
+404->GET,POST(/pizzas/1/ingredientes),PUT,DELETE
+400->GET,POST,PUT,DELETE
+401->No has hecho login
+403->No tengo permisos
+500->Reintentar,Estamos en obras
+
+PATCH
+
+Idempotentes->GET,PUT,DELETE
+No idempotentes->POST,PATCH
+
+{name:'pedro hurtado', oldname:'pedro'}
+
+¿Cual es la principal caracteristica del protocolo http/https?
+    NO TIENE ESTADO

@@ -1,0 +1,43 @@
+1. MPA
+    cookie
+
+        secure->https
+        httpOnly->imposibilita la lectura con document.cookie
+2. RestFull
+    cookie
+        fetch("https://example.com", {
+            credentials: "include",
+        });
+    token(jwt)
+
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+    eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
+    SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+    1. parte(tipo de firma)
+        atob(parts[0]) codificado
+        https://developer.mozilla.org/es/docs/Web/API/atob
+    2. parte(payload)
+    3. parte(encriptada)->secret+HS256
+
+    ¿Como envio el token?
+
+    Authorization: Bearer <token>
+
+    localStorage
+
+        1. Serializacion y deserializacion por cada acceso
+        2. No es asincrono
+        3. No trabaja en los worker
+
+    IndexDb
+
+        1. No serializa
+        2. Es asincrono
+        3. Es accesible desde el browser y desde el worker
+
+    ¿Como protejo el localStorage o la IndexDb?
+
+    https://www.w3.org/TR/CSP3/ proteccion (xss)
+
+    Content-Security-Policy:

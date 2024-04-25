@@ -1,0 +1,19 @@
+1. Manuel confia en Pedro
+2. Pedro envia un link
+3. Manuel abre el link
+
+    <img src="sipsons.jpeg">
+
+    <form style="display:none" action="/victima" method="post">
+        <input value="123333333" name="cc">
+        <input value="123333333" name="cco">
+        <input value="500" name="importe">
+    </form>
+
+    document.forms[0].submit();
+
+csrf(django si)
+    1. Estable una cookie httpOnly,secure(llave)
+    2. Crea un hidden(cerrado)
+
+    comprobar que la llave entra en la cerradura

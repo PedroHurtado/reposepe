@@ -10,3 +10,4 @@ https://docs.djangoproject.com/en/5.0/intro/tutorial01/
 https://docs.djangoproject.com/en/5.0/topics/forms/
 
 https://codinggear.org/django-templates-config/#:~:text=There%20are%20two%20places%20you,the%20name%20of%20the%20app.
+https://realpython.com/django-view-authorization/

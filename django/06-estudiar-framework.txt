@@ -3,6 +3,12 @@
     Debug
 2. Routing
     {path:"", views:view.home}
+    params
+        pathname: "/members/1" <int:id>
+    queryParams 
+        search: "?name=pedro"
+        ["key","value"]
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 3. Template sintax
     
     if
